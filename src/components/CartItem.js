@@ -1,21 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import Avatar from '@material-ui/core/Avatar';
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography'
 
-const ShoppingItem = ({ onClick, itemName, price }) => (
-	<ListItem button height="large" onClick={onClick}>
-              <ListItemIcon><InboxIcon /></ListItemIcon>
-              <ListItemText primary={itemName}/>
+const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
+	<>
+	<ListItem button salignItems="flex-start" height="large" onClick={onClick}>
+            <ListItemAvatar>
+              	<Avatar alt={itemName} src={imgUrl}/>
+          	</ListItemAvatar>
+          	<ListItemText primary={itemName}
+             secondary={
+               <React.Fragment>
+                 <Typography
+                   component="span"
+                   variant="body2"
+                   display="inline"
+                   color="textPrimary"
+                 >
+                   ${price}
+                 </Typography>
+                 </React.Fragment>
+             }
+            />
     </ListItem>
+    <Divider variant="inset" component="li"/>
+    </>
 );
 
 ShoppingItem.propTypes = {
 	onClick: PropTypes.func.isRequired,
 	itemName: PropTypes.string.isRequired,
-	price: PropTypes.number.isRequired
+	price: PropTypes.number.isRequired,
+	imgUrl: PropTypes.string.isRequired
 };
 
 export default ShoppingItem;

@@ -4,29 +4,29 @@ const initialState = {
 	shoppingCart: [],
 	groceries: [
 		{
-			//id: 1,
-			itemName: "potatoes",
+			itemName: "Potatoes",
 			price: 1.3,
+			imgUrl: "../images/potatoes.jpg",
 		},
 		{
-			//id: 2,
-			itemName: "carrots",
+			itemName: "Carrots",
 			price: 1.3,
+			imgUrl: "../images/carrots.jpg",
 		},
 		{
-			//id: 3,
-			itemName: "onions",
+			itemName: "Onions",
 			price: 1.3,
+			imgUrl: "../images/onions.jpg",
 		},
 		{
-			//id: 4,
-			itemName: "pears",
+			itemName: "Leeks",
 			price: 1.3,
+			imgUrl: "../images/leeks.jpg",
 		},
 		{
-			//id: 5,
-			itemName: "eggs",
+			itemName: "Eggs",
 			price: 1.3,
+			imgUrl: "../images/eggs.jpg",
 		},
 
 	]

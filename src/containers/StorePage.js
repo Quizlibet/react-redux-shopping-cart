@@ -6,7 +6,7 @@ import VisibleItemList from './VisibleItemList';
 import useStyles from '../styles/UseStyles';
 
 function StorePage(props) {
-	const { classes, open } = props;
+	const { classes } = props;
 	return (
 		<main
         className={clsx(classes.content, {
@@ -18,5 +18,9 @@ function StorePage(props) {
       </main>
   	)
 }
+
+StorePage.propTypes = {
+	classes: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(StorePage);
