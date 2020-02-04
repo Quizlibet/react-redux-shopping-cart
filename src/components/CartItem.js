@@ -22,7 +22,7 @@ const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
                    display="inline"
                    color="textPrimary"
                  >
-                   ${price}
+                   {price.toLocaleString("en-US", {style: "currency", currency: "USD"})}
                  </Typography>
                  </React.Fragment>
              }

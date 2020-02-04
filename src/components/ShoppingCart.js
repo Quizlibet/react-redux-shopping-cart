@@ -23,7 +23,9 @@ const ShoppingCart = ({items, onItemClick}) => (
               display="inline"
               color="textPrimary"
             >
-            Total: ${items.reduce((accum, current) => {return accum + current.price}, 0)}
+            Total: {
+              items.reduce((accum, current) => {return accum + current.price}, 0)
+                .toLocaleString("en-US", {style: "currency", currency: "USD"})}
             </Typography>
           </React.Fragment>
         }

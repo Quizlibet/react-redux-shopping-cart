@@ -11,7 +11,7 @@ const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
 		size="small"
 		color="primary"
 	>
-		{itemName} ${price}
+		{itemName} {price.toLocaleString("en-US", {style: "currency", currency: "USD"})}
 	</Button>
 	</div>
 	);
