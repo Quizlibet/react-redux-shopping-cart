@@ -58,7 +58,7 @@ function rootReducer(state = initialState, action) {
 		case REQUEST_CHECKOUT:
 			return Object.assign({}, state, { isCartLoading: true, isCartStale: false });
 		case COMPLETE_CHECKOUT:
-			return Object.assign({}, state, { isCartLoading: false, isCartStale: false, shoppingCart: []})
+			return Object.assign({}, state, { isCartLoading: false, isCartStale: false, shoppingCart: []});
 		default: 
 			return state;
 	}

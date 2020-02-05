@@ -53,7 +53,6 @@ export function asyncCheckout() {
 			dispatch(requestCheckout());
 			return fetch("reqres.in/api/unknown/2")
 			.then(response => response.data)
-			.then(() => alert("Checkout Success!"))
 			.then(() => dispatch(completeCheckout()));
 		}
 	}
