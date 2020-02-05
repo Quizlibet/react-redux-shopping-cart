@@ -1,4 +1,4 @@
-#React-Redux Shopping Cart
+<h1>React-Redux Shopping Cart</h2>
 
 This project is a demo application utilizing React, Redux and Material-UI to implement a mock storefront.
 
