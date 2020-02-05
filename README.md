@@ -1,10 +1,13 @@
 <h1>React-Redux Shopping Cart</h2>
 
-This project is a demo application utilizing React, Redux and Material-UI to implement a mock storefront.
+This project is a demo application utilizing React, Redux and Material-UI to implement a very simple mock storefront.
+
+## Dependencies:
+This project requires the user to have Node.js to run
 
 ## Start Guide:
 
-To start the application, run `npm start` from the directory. This will run the start React Script and launch the application on localhost: 3000.
+Before running the project for the first time, run `npm install` from the project directory to install the necessary node modules. To start the application, run `npm start` from the directory. This will run the start React Script and launch the application on localhost: 3000.
 
 ## Use Guide:
 
@@ -24,11 +27,3 @@ Click <b>Checkout</b> on the App bar at the top of the screen to go to the Check
   * Decouple the constant store items from the redux state and decompose the reducers using combineReducers.
   * Recompose the thunk middleware into it's own component.
   * Route the user back to the store page whenever the page is reloaded, as well as whenever a check out request succeeds.
-  
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
