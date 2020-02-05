@@ -40,10 +40,10 @@ export default function App() {
           className={classes.appBar}
         >
           <Toolbar>
-            <Typography salignItems="flex-start" variant="h6" noWrap>
-              Permanent Drawer
+            <Typography variant="h6" noWrap>
+              React Redux Shopping Center
             </Typography>
-            <div justifyContent="right">
+            <div>
             <NavLink to={'/'}>Store</NavLink>
             <NavLink to={'/checkout'}>Check Out</NavLink>
             </div>

@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
-import { fetchCheckout } from '../actions';
+import { asyncCheckout } from '../actions';
+
+const styles = theme => ({
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+      },
+    toolbar: theme.mixins.toolbar
+})
 
 class CheckOut extends Component {
 
@@ -13,26 +23,21 @@ class CheckOut extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount() {
-        const {dispatch} = this.props;
-    }
-
-    componentDidUpdate() {
-        const {dispatch} = this.props;
-    }
-
     handleClick(e) {
         e.preventDefault();
         const { dispatch } = this.props;
-        dispatch(fetchCheckout());
+        dispatch(asyncCheckout());
     }
 
     render() {
+        const { classes, shoppingCart } = this.props;
         return (
-            <main>
-                <Typography salignItems="flex-start" variant="h6" noWrap>
-                    Permanent Drawer
-                </Typography>'
+            <main className={classes.content}>
+                <div className={classes.toolbar}/>
+                <Typography variant="h6" noWrap>
+                    Total: {shoppingCart.reduce((accum, current) => {return accum + current.price}, 0)
+                .toLocaleString("en-US", {style: "currency", currency: "USD"})}
+                </Typography>
                 <div/>
                 <Button variant="contained" span="100%" onClick={this.handleClick}>Check Out</Button>
                 <Router><Link to={"/"} className="nav-link">Return to Store</Link></Router>
@@ -43,7 +48,9 @@ class CheckOut extends Component {
 }
 
 CheckOut.propTypes = {
-    shoppingList: PropTypes.arrayOf(PropTypes.shape({
+    classes: PropTypes.object.isRequired,
+    theme: PropTypes.object.isRequired,
+    shoppingCart: PropTypes.arrayOf(PropTypes.shape({
         itemName: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         imgUrl: PropTypes.string.isRequired
@@ -53,7 +60,10 @@ CheckOut.propTypes = {
 };
 
 function mapStateToProps(state) {
-    const { shoppingList } = state;
+    return { shoppingCart: state.shoppingCart };
 }
 
-export default connect(mapStateToProps)(CheckOut);
+export default compose(
+    withStyles(styles, { withTheme: true}),
+    connect(mapStateToProps, null)
+)(CheckOut);

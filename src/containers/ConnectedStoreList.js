@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addItem } from '../actions';
+import { asyncAddItem } from '../actions';
 import StoreList from '../components/StoreList';
 
 const mapStateToProps = state => {
@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		onItemClick: item => {
-			dispatch(addItem(item));
+			dispatch(asyncAddItem(item));
 		}
 	}
 };

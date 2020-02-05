@@ -11,7 +11,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
 	<>
-	<ListItem salignItems="flex-start" height="large">
+	<ListItem height="large">
             <ListItemAvatar>
               	<Avatar alt={itemName} src={imgUrl}/>
           	</ListItemAvatar>
