@@ -1,14 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import VisibleShoppingCart from '../containers/VisibleShoppingCart';
+import ConnectedCartList from '../containers/ConnectedCartList';
 import HomeComponent from '../components/HomeComponent';
-import CheckOut from '../components/Checkout';
+import CheckOut from '../containers/Checkout';
 
 const cartWidth = 240;
 
@@ -44,8 +44,8 @@ export default function App() {
               Permanent Drawer
             </Typography>
             <div justifyContent="right">
-            <Link to={'/'}>Store</Link>
-            <Link to={'/checkout'}>Check Out</Link>
+            <NavLink to={'/'}>Store</NavLink>
+            <NavLink to={'/checkout'}>Check Out</NavLink>
             </div>
           </Toolbar>
         </AppBar>
@@ -62,7 +62,7 @@ export default function App() {
           anchor="right"
         >
           <div className={classes.toolbar}/>
-          <VisibleShoppingCart />
+          <ConnectedCartList />
         </Drawer>
       </div>
     </Router>

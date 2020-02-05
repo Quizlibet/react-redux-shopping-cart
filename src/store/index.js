@@ -1,6 +1,5 @@
 import {createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers/index';
-//import { preventForbiddenMiddleware } from '../middleware';
 import thunk from 'redux-thunk';
 
 //const storeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;

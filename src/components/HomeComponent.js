@@ -1,6 +1,6 @@
    	import React from 'react';
 	import { makeStyles } from '@material-ui/core';
-    import VisibleItemList from '../containers/VisibleShoppingList';
+    import ConnectedStoreList from '../containers/ConnectedStoreList';
 
 	const useStyles = makeStyles(theme => ({
 		toolbar: theme.mixins.toolbar,
@@ -16,7 +16,7 @@
 		return (
 			<main className={classes.content}>	
 				<div className={classes.toolbar}/>
-				<VisibleItemList />
+				<ConnectedStoreList />
 			</main>
 		);
     }

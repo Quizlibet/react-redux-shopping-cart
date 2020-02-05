@@ -1,6 +1,8 @@
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
-export const CHECK_OUT = "CHECK_OUT";
+export const REFRESH_CART = "REFRESH_CART";
+export const REQUEST_CHECKOUT = "REQUEST_CHECKOUT";
+export const COMPLETE_CHECKOUT = "COMPLETE_CHECKOUT";
 
 let nextItemID = 0;
 
@@ -15,6 +17,22 @@ export const removeItem = id => ({
 	id
 });
 
-export const checkOut = () => ({
-	type: CHECK_OUT,
+export const refreshCart = () => ({
+	type: REFRESH_CART,
 });
+
+export const requestCheckout = () => ({
+	type: REQUEST_CHECKOUT,
+});
+
+export const completeCheckout = () => ({
+	type: COMPLETE_CHECKOUT,
+});
+
+export function fetchCheckout() {
+	return dispatch => {
+		dispatch(requestCheckout());
+		return fetch("https://reqres.in/api/unknown/2")
+		.then(() => dispatch(completeCheckout()));
+	}
+}

@@ -5,11 +5,13 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
 	<>
-	<ListItem button salignItems="flex-start" height="large" onClick={onClick}>
+	<ListItem salignItems="flex-start" height="large">
             <ListItemAvatar>
               	<Avatar alt={itemName} src={imgUrl}/>
           	</ListItemAvatar>
@@ -24,6 +26,9 @@ const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
                  >
                    {price.toLocaleString("en-US", {style: "currency", currency: "USD"})}
                  </Typography>
+                 <IconButton color="primary" onClick={onClick}>
+                   <DeleteIcon />
+                 </IconButton>
                  </React.Fragment>
              }
             />
