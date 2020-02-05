@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,7 +10,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import ConnectedCartList from '../containers/ConnectedCartList';
 import HomeComponent from '../components/HomeComponent';
+import Button from '@material-ui/core/Button'
 import CheckOut from '../containers/Checkout';
+import Box from '@material-ui/core/Box';
 
 const cartWidth = 240;
 
@@ -40,13 +44,21 @@ export default function App() {
           className={classes.appBar}
         >
           <Toolbar>
-            <Typography variant="h6" noWrap>
+            <Box flexGrow={1}>
+            <Typography variant="h6" noWrap flexGrow={1}>
               React Redux Shopping Center
             </Typography>
-            <div>
-            <NavLink to={'/'}>Store</NavLink>
-            <NavLink to={'/checkout'}>Check Out</NavLink>
-            </div>
+            </Box>
+            <Link color="primary" component={RouterLink} to="/">
+              <Button variant="contained" color="primary">
+                Store
+              </Button>
+            </Link>
+            <Link component={RouterLink} to='/checkout'>
+              <Button variant="contained" color="primary">
+                Check Out
+              </Button>
+            </Link>
           </Toolbar>
         </AppBar>
         <Switch>

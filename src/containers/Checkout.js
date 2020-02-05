@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
@@ -40,8 +39,6 @@ class CheckOut extends Component {
                 </Typography>
                 <div/>
                 <Button variant="contained" span="100%" onClick={this.handleClick}>Check Out</Button>
-                <Router><Link to={"/"} className="nav-link">Return to Store</Link></Router>
-                
             </main>
         );
     }

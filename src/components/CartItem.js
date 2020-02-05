@@ -26,7 +26,7 @@ const ShoppingItem = ({ onClick, itemName, price, imgUrl }) => (
                  >
                    {price.toLocaleString("en-US", {style: "currency", currency: "USD"})}
                  </Typography>
-                 <IconButton color="primary" onClick={onClick}>
+                 <IconButton color="primary" onClick={onClick} alignSelf="flex-end">
                    <DeleteIcon />
                  </IconButton>
                  </React.Fragment>

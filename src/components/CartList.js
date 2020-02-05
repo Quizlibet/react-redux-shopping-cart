@@ -35,7 +35,7 @@ const CartList = ({items, onItemClick}) => (
           <React.Fragment>
             <Typography
               component="span"
-              variant="body2"
+              variant="subtitle2"
               display="inline"
               color="textPrimary"
             >

@@ -7,7 +7,6 @@ import App from './App';
 
 const theme = createMuiTheme();
 
-//import StorePage from
 const Root = ({ store }) => (
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>

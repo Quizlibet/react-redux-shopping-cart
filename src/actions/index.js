@@ -51,8 +51,10 @@ export function asyncCheckout() {
 	return (dispatch, getState) => {
 		if(allowCheckout(getState())) {
 			dispatch(requestCheckout());
-			return fetch("https://reqres.in/api/unknown/2?delay=3")
-			.then(() => alert("Checkout Success!")).then(() => dispatch(completeCheckout()));
+			return fetch("reqres.in/api/unknown/2")
+			.then(response => response.data)
+			.then(() => alert("Checkout Success!"))
+			.then(() => dispatch(completeCheckout()));
 		}
 	}
 };
