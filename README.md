@@ -8,7 +8,7 @@ To start the application, run `npm start` from the directory. This will run the 
 
 ## Use Guide:
 
-Once the app is loaded you will be routed to the <b>Store</b> page, where you are presented with a grid of available produce items. Click <b>Add to cart</b> under any item to add it to your shopping cart, displayed on the right side of the screen. The user can navigate back to the Store page at any time by pressing "Store" on the app bar.
+Once the app is loaded you will be routed to the <b>Store</b> page, where you are presented with a grid of available produce items. Click <b>Add to cart</b> under any item to add it to your shopping cart, displayed on the right side of the screen. The user can navigate back to the Store page at any time by pressing <b>Store</b> on the app bar.
 
 Each item in the cart contains a thumbnail of its contents, its price, and a removal button. Pressing the removal button deletes the item from the cart and updates the count and price accordingly. The cart contains a constant element displaying the current number of items it contains, as well as an element containing the current total price of all said items.
 
